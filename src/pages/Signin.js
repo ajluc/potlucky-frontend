@@ -30,6 +30,16 @@ const SignIn = ({ setUser }) => {
     }
   }
 
+  const demoSubmit = async (e) => {
+    e.preventDefault()
+    const payload = await SignInUser({
+      email: 'amayajlucas@gmail.com',
+      password: 'potlucky1234'
+    })
+    await setUser(payload)
+    navigate('/')
+  }
+
   return (
     <div className="flex-column">
       <div className="events-container card">
@@ -63,9 +73,17 @@ const SignIn = ({ setUser }) => {
               <button id="login-btn">Sign in!</button>
             </div>
           </form>
-          <div className='new-user'>
-            <p id='newbie'>New user?</p>
-            <button id='reg-btn' onClick={() => navigate('/register')}>Register</button>
+          <div className="new-user">
+            <p id="newbie">New user?</p>
+            <button id="reg-btn" onClick={() => navigate('/register')}>
+              Register
+            </button>
+          </div>
+          <div className="new-user">
+            <p id="newbie">Want to take a test run?</p>
+            <button id="reg-btn" onClick={demoSubmit}>
+              Demo User
+            </button>
           </div>
         </div>
       </div>
