@@ -1,6 +1,7 @@
 import Axios from 'axios'
 
-export const BASE_URL = 'https://potlucky-back.herokuapp.com/api'
+export const BASE_URL =
+  'https://potlucky-backend-2bdcc70eb88e.herokuapp.com/api'
 //export const BASE_URL = 'http://localhost:3001/api'
 
 const Client = Axios.create({ baseURL: BASE_URL })
