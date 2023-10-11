@@ -1,8 +1,6 @@
-![Potlucky](https://i.imgur.com/O5OyXvg.jpg)
+![Potlucky](./src/images/potlucky_banner.jpeg)
 
 ## **Date:** 11/10/2022
-
----
 
 ### **Deployed Page:** [Potlucky](https://potlucky-b1d55a4c56e4.herokuapp.com/)
 
@@ -20,11 +18,13 @@
 
 ### **_Description_**
 
-Have you ever had an event that you were excited to plan only to realize that organizing your event and coordinating with many guests was proving difficult? We have the solution for you! Welcome to Potlucky! Potlucky is a web application that allows you to create and plan events for you and your guests, as well as to create a space where the event host can organize who is bringing what to the party. A comments section on each event also allows for guests and hosts alike to discuss their upcoming event. Your potlucks and parties are about to get even better!
+Have you ever had an event that you were excited to plan only to realize that organizing your event and coordinating with many guests was proving difficult? Welcome to POTLUCKY! 
 
-<br />
+POTLUCKY is a web app to streamline your party planning. Hosts can create events, invite guests, and disinvite the party poopers. As guests, users can RSVP, write comments to the group, and tell everyone what they’ll be bringing.
 
-**_Link to backend -->_** [Potlucky backend repository](https://github.com/ajluc/potlucky-backend)
+Your potlucks and parties are about to get even better!
+
+**_Link to backend_** | [Potlucky backend repository](https://github.com/ajluc/potlucky-backend)
 
 ---
 
@@ -39,15 +39,15 @@ Have you ever had an event that you were excited to plan only to realize that or
 
 ### **_Getting Started_**
 
-To get started, first make an account on Potlucky. All users are able to create and host an event or join events they have been invited to join.
+To get started, first make an account on Potlucky. All users are able to create and host an event or join events they have been invited to.
 
 To host an event, click the 'add event' link in the navigation bar, which will lead to a form that allows for the host to choose a name for the event, date, location, and a brief description of the event. Once the event is created, they or their guests will also be able to list items they are brining to the party! Hosts will be able to change any details about the event.
 
-Guests will be able to join events if they are invited by the host and on the guest end, they will be able to add what they plan to bring or leave comments in the event comment section.
+Guests will be able to join events if they are invited by the host and can add what they plan to bring or leave comments in the event comment section.
 
-A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/Vi9hiVsb/project-3-potlucky).
+**_Development Progress_** | [Trello](https://trello.com/b/Vi9hiVsb/project-3-potlucky).
 
-The project itself was deployed and can be viewed [here](https://feelingpotlucky.herokuapp.com/).
+**_Presentation Deck_** | [Potlucky Pitch](https://docs.google.com/presentation/d/1FlvDBdRKWPrBIGKzEBvmOvhYfcvaCnxqlFYTfZ9O2nY/edit?usp=sharing)
 
 ---
 
