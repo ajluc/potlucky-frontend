@@ -85,201 +85,183 @@ const EventDetails = ({ user }) => {
   }
 
   return (
-    <div className="flex-column">
-      <div className="events-container card">
-        <div className="buffer">
-          <div className="event-detail-header">
-            <h2 id="event-name">{eventDetails?.eventName}</h2>
-            <div className="share-deets">
-              {!isOver && (
-                <div>
-                  {sharing && <ShareLink />}
-                  <button
-                    className="share-event-button"
-                    type="button"
-                    onClick={() => {
-                      sharing ? setSharing(false) : setSharing(true)
-                    }}
-                  >
-                    Share?
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-          <div>
-            {user?.id === eventDetails?.hostedBy.id ? (
-              <div className="your-event">
-                {isOver ? (
-                  <p>You hosted this event</p>
-                ) : (
-                  <p>You are hosting this event</p>
-                )}
+    <div className="page-container">
 
-                {!isOver && (
-                  <div className="edit-and-delete">
-                    <button id="edit-btn" onClick={editOnClick}>
-                      Edit
-                    </button>
-                    <button id="delete-btn" onClick={deleteOnClick}>
-                      Delete
-                    </button>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div>
-                <h4>Host:</h4>
-                <p className="indent">{eventDetails?.hostedBy.name}</p>
-              </div>
-            )}
-          </div>
-          <div>
-            {edit ? (
-              <form onSubmit={handleSubmit}>
-                <div className="when">
-                  <h4>When:</h4>
-                  <input
-                    type="datetime-local"
-                    value={formState.date}
-                    id="date"
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="where">
-                  <h4>Where:</h4>
-                  <input
-                    type="text"
-                    value={formState.location}
-                    id="location"
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="what">
-                  <h4>What:</h4>
-                  <textarea
-                    rows="4"
-                    cols="50"
-                    onChange={handleChange}
-                    id="description"
-                    value={formState.description}
-                  />
-                </div>
-                <div className="sub-btn-the-second">
-                  <button id="sub-btn-2" type="submit">
-                    Submit
-                  </button>
-                </div>
-              </form>
-            ) : (
-              <div>
-                {user && (
-                  <div>
-                    <h4>When:</h4>
-                    {isOver ? (
-                      <p>
-                        You missed the party! It was on{' '}
-                        {formatDate(eventDetails?.date)}
-                      </p>
-                    ) : (
-                      <p className="indent">
-                        {formatDate(eventDetails?.date)} at{' '}
-                        {formatTime(eventDetails?.date)}
-                      </p>
-                    )}
-                    <h4>Where:</h4>
-                    <p className="indent">{eventDetails?.location}</p>
-                  </div>
-                )}
-                <h4>What:</h4>
-                <p className="indent">{eventDetails?.description}</p>
-              </div>
-            )}
-          </div>
-          {user ? (
+      <div className='fixed-column'>
+
+        <div className='image-container'>Placeholder</div>
+        <h1 id='event-title'>{eventDetails?.eventName}</h1>
+        <div className="uh">
+          {!isOver && (
             <div>
-              {eventDetails?.attendees.find((guest) => guest.id === user.id) ||
-              user?.id === eventDetails?.hostedBy.id ? (
-                <></>
-              ) : (
-                <div>
-                  <button id="rsvp-btn" onClick={handleClick}>
-                    RSVP
-                  </button>
-                </div>
-              )}
-            </div>
-          ) : (
-            <div>
-              <h3>Please sign in or register to RSVP</h3>
+              {sharing && <ShareLink />}
               <button
-                className="signin-btn"
-                onClick={() => navigate('/signin')}
+                className=""
+                type="button"
+                onClick={() => {
+                  sharing ? setSharing(false) : setSharing(true)
+                }}
               >
-                Sign In
-              </button>
-              <button
-                className="register-btn"
-                onClick={() => navigate('/register')}
-              >
-                Register
+                Share?
               </button>
             </div>
           )}
         </div>
-      </div>
-      {user &&
-      (eventDetails?.attendees.find((guest) => guest.id === user.id) ||
-        user?.id === eventDetails?.hostedBy.id) ? (
-        <div className="events-container flex-row flex-start">
-          <div className="hosting-card-container">
-            <div className="card">
-              <div className="buffer">
-                <div className="items-list">
-                  <div className="items-header">
-                    <h4>What is everyone bringing?</h4>
-                  </div>
-                  <div className="items-list-of-things">
-                    <ItemsList user={user} eventId={id} isOver={isOver} />
-                  </div>
+
+        <div className='uh'>
+          {user?.id === eventDetails?.hostedBy.id ? (
+            <div className="uh">
+              {isOver ? (
+                <p>You hosted this event</p>
+              ) : (
+                <p>You are hosting this event</p>
+              )}
+              {!isOver && (
+                <div className="">
+                  <button onClick={editOnClick}>
+                    Edit
+                  </button>
+                  <button onClick={deleteOnClick}>
+                    Delete
+                  </button>
                 </div>
+              )}
+            </div>
+            ) : (
+              <div>
+                <h4>Hosted by:</h4>
+                <p className="">{eventDetails?.hostedBy.name}</p>
               </div>
-            </div>
-            <div className="card">
-              <div className="buffer">
-                <div className="comments-sect">
-                  <h4>Comments:</h4>
-                  <Comments user={user} eventId={id} />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="attending-card-container card">
-            <div className="buffer">
-              <h4>Who:</h4>
-              {eventDetails?.attendees.map((guest) => (
-                <div key={guest.id} className="attendee-listing">
-                  <Avatar
-                    size={40}
-                    name={guest.name}
-                    variant="beam"
-                    colors={[
-                      '#F9DED3',
-                      '#FDD1B6',
-                      '#FAB4B6',
-                      '#C7B6BE',
-                      '#89ABB4'
-                    ]}
-                  />
-                  <p id="attendee-listing-content">{guest.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+            )}
         </div>
-      ) : (
-        <div></div>
-      )}
+      </div>
+
+      <div className='content-column'>
+
+        <div className=''>
+          {edit ? (
+            <form onSubmit={handleSubmit}>
+              <input
+                type="datetime-local"
+                value={formState.date}
+                id="date"
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                value={formState.location}
+                id="location"
+                onChange={handleChange}
+              />
+              <textarea
+                rows="4"
+                cols="50"
+                onChange={handleChange}
+                id="description"
+                value={formState.description}
+              />
+              <button type="submit">
+                Submit
+              </button>
+            </form>
+          ) : (
+            <div>
+
+                  {isOver ? (
+                    <div>
+                      <p>You missed the party! It was on </p>
+                      <h2>{formatDate(eventDetails?.date)}</h2>
+                    </div>
+                  ) : (
+                    <div>
+                      <h2 className="event-date">{formatDate(eventDetails?.date)}</h2>
+                      <h3 className="event-time">{formatTime(eventDetails?.date)}</h3>
+                    </div>
+                  )}
+                  {user ? (
+                    <div className='flex-row'>
+                      <div className='pin'></div>
+                      <p className="">{eventDetails?.location}</p>
+                    </div>
+                  ) : (
+                    <div className='flex-row'>
+                      <div className="lock"></div>
+                      <p>Private Location</p>
+                    </div>
+                  )}
+
+              <p className="">{eventDetails?.description}</p>
+            </div>
+          )}
+        </div>
+
+        {user ? (
+          <div>
+            {eventDetails?.attendees.find((guest) => guest.id === user.id) ||
+            user?.id === eventDetails?.hostedBy.id ? (
+              <></>
+            ) : (
+              <div>
+                <button onClick={handleClick}>
+                  RSVP
+                </button>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div>
+            <h2 className='margin'>Please sign in or register to RSVP</h2>
+            <button
+              onClick={() => navigate('/signin')}
+            >
+              Sign In
+            </button>
+            <button
+              onClick={() => navigate('/register')}
+            >
+              Register
+            </button>
+          </div>
+        )}
+
+      {user &&
+        (eventDetails?.attendees.find((guest) => guest.id === user.id) ||
+          user?.id === eventDetails?.hostedBy.id) ? (
+            <div>
+              <div className="margin">
+                <h2>Bringing</h2>
+                <ItemsList user={user} eventId={id} isOver={isOver} />
+              </div>
+              <div className="margin">
+                <h2>Comments</h2>
+                <Comments user={user} eventId={id} />
+              </div>
+            <div className="margin">
+                <h2>Guests</h2>
+                {eventDetails?.attendees.map((guest) => (
+                  <div key={guest.id} className="flex-row">
+                    <Avatar
+                      size={40}
+                      name={guest.name}
+                      variant="beam"
+                      colors={[
+                        '#F9DED3',
+                        '#FDD1B6',
+                        '#FAB4B6',
+                        '#C7B6BE',
+                        '#89ABB4'
+                      ]}
+                    />
+                    {/* <p className='bold'>{guest.name}</p> */}
+                  </div>
+                ))}
+              </div>
+            </div>
+        ) : (
+          <div></div>
+        )}
+
+      </div>      
     </div>
   )
 }

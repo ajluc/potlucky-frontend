@@ -37,23 +37,16 @@ const Comments = ({ user, eventId }) => {
   return comments.length > 0 ? (
     <div>
       {comments.map((comment) => (
-        <div className="comment" key={comment.id}>
-          <div className="comment-header">
+        <div className="flex-row" key={comment.id}>
+          <div className='avatar-container'>
             <Avatar
               size={40}
               name={comment.author.name}
               variant="beam"
               colors={['#F9DED3', '#FDD1B6', '#FAB4B6', '#C7B6BE', '#89ABB4']}
             />
-            <h5 id="comment-header-username">{comment.author.username}</h5>
-          </div>
-          <section className="comment-content">
-            <p>{comment.comment}</p>
-            {comment.createdAt === comment.updatedAt ? <b></b> : <b>edited</b>}
-          </section>
-          <section className="comment-date">
-            <h6>{comment.createdAt}</h6>
-          </section>
+        </div>
+            <p><span className='bold'>{comment.author.name}</span> said {comment.comment}</p>
         </div>
       ))}
       <form onSubmit={handleSubmit}>

@@ -41,7 +41,7 @@ Your potlucks and parties are about to get even better!
 
 To get started, first make an account on Potlucky. All users are able to create and host an event or join events they have been invited to.
 
-To host an event, click the 'add event' link in the navigation bar, which will lead to a form that allows for the host to choose a name for the event, date, location, and a brief description of the event. Once the event is created, they or their guests will also be able to list items they are brining to the party! Hosts will be able to change any details about the event.
+To host an event, click the 'add event' link in the navigation bar, which will lead to a form that allows for the host to choose a name for the event, date, location, and a brief description of the event. Once the event is created, they or their guests will also be able to list items they are bringing to the party! Hosts will be able to change any details about the event.
 
 Guests will be able to join events if they are invited by the host and can add what they plan to bring or leave comments in the event comment section.
 

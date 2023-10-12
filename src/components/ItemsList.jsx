@@ -48,14 +48,16 @@ const ItemsList = ({ user, eventId, isOver }) => {
       {items?.map((item) => (
 
         <div key={item.id} className="item-listing">
+          <div className='avatar-container'>
           <Avatar
             size={40}
             name={item.userItems.name}
             variant="beam"
             colors={['#F9DED3', '#FDD1B6', '#FAB4B6', '#C7B6BE', '#89ABB4']}
           />
+          </div>
           <p id="item-listing-content">
-            {item.userItems.name} is bringing {item.itemName}
+            <span className='bold'>{item.userItems.name}</span> is bringing {item.itemName}
           </p>
           <div>
           {item.userId === user.id && !isOver ? <button id='delete-item-btn' onClick={()=> deleteItem(item.id)}>X</button> : <></>}

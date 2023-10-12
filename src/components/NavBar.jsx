@@ -23,7 +23,7 @@ const NavBar = ({ user, handleLogout, randomEvent }) => {
         <Link to="/">Home</Link>
         {/* <Link to="/profile">Profile</Link> */}
         <Link to="/newevent">Create Event</Link>
-        <a id='potlucky' onClick={getRandomEvent}>Feeling PotLucky?</a>
+        <Link id='potlucky' onClick={getRandomEvent}>Feeling PotLucky?</Link>
         {/* <Link to={`/events/${randomEvent}`}>Feeling Potlucky?</Link> */}
         <Link onClick={handleLogout} to="/">
           Sign Out
@@ -44,9 +44,7 @@ const NavBar = ({ user, handleLogout, randomEvent }) => {
   return (
     <header id="header">
       <nav className="nav-container flex-row">
-        <div id="nav-logo">
-          <h1>Potlucky</h1>
-        </div>
+          <h1 id="nav-logo">Potlucky</h1>
         <div className="center-column flex-column">
           {user ? authenticatedOptions : publicOptions}
         </div>
