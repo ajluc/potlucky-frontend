@@ -60,7 +60,7 @@ const ItemsList = ({ user, eventId, isOver }) => {
             <span className='bold'>{item.userItems.name}</span> is bringing {item.itemName}
           </p>
           <div>
-          {item.userId === user.id && !isOver ? <button id='delete-item-btn' onClick={()=> deleteItem(item.id)}>X</button> : <></>}
+          {item.userId === user.id && !isOver ? <button className='delete-item-btn' onClick={()=> deleteItem(item.id)}>X</button> : <></>}
           </div>
 
         </div>
