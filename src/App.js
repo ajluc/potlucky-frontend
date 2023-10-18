@@ -36,7 +36,6 @@ function App() {
       <NavBar user={user} handleLogout={handleLogout} />
       <main>
       <div className='shape'></div>
-
         <Routes>
           <Route path="/" element={<Home user={user} setUser={setUser} />} />
           <Route path="/register" element={<Register />} />

@@ -59,25 +59,23 @@ const ItemsList = ({ user, eventId, isOver }) => {
           <p id="item-listing-content">
             <span className='bold'>{item.userItems.name}</span> is bringing {item.itemName}
           </p>
-          <div>
           {item.userId === user.id && !isOver ? <button className='delete-item-btn' onClick={()=> deleteItem(item.id)}>X</button> : <></>}
-          </div>
-
         </div>
       ))} 
-      <div className='add-item-box'>
         {!isOver &&
         <form onSubmit={handleSubmit}>
+          <div className='flex-row'>
             <input
             type="text"
             id="itemName"
+            placeholder='What are you bringing?'
             value={addItem?.itemName || ''}
             onChange={handleChange}
             />
-            <button id='add-btn'type="submit">Add</button>
+            {/* <button id='add-btn'type="submit">Add</button> */}
+      </div>
         </form>}
       </div>
-    </div>
   )
 }
 

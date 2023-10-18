@@ -14,6 +14,15 @@ body, .shape {
 
   font-family: 'Lato', sans-serif;
   color: #103942;
+  z-index: 100;
+}
+.shape {
+  height: 1600px;
+  width: 1600px;
+  position: fixed;
+  border-radius: 50%;
+  transform: translate(-30%, 12%);
+  z-index: -100;
 }
 
 .bold {
@@ -34,16 +43,11 @@ body, .shape {
 
 #header {
   /* position: sticky; */
-  padding: 10px;
+  padding: 10px 20px;
   top: 0;
   z-index: 1;
   font-family: 'Lato', sans-serif;
   color: #103942;
-}
-
-
-.delete-item-btn {
-  width: 30px;
 }
 
 
@@ -108,6 +112,7 @@ a:active {
 .flex-row {
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }
 
 .flex-column {
@@ -143,7 +148,7 @@ a:active {
 
 
 
-#event-title, #reg-title {
+#event-title, #reg-title, #title {
   font-size: 36px;
   font-family: 'Righteous', cursive;
 }
@@ -155,12 +160,24 @@ a:active {
 }
 
 .card {
-  background-color: rgba(255,255,255,0.13);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,0.1);
-  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  /* background-color: rgba(255,255,255,0.13); */
+  /* border-radius: 10px; */
+  backdrop-filter: blur(20px);
+  /* border: 2px solid rgba(255,255,255,0.1); */
+  /* box-shadow: 0 0 40px rgba(8,7,16,0.6); */
+  box-shadow: 0 0 40px rgba(8,7,16,0.1);
   padding: 35px;
+  height: 100%;
+}
+.card-container {
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  align-items: stretch;
+  gap: 20px;
+}
+.home-cards {
+  width: 250px;
+  margin: 0px 25px 25px 0px;
 }
 
 form {
@@ -183,19 +200,26 @@ label{
   font-size: 16px;
   font-weight: 500;
 }
-input{
+input, textarea{
   display: block;
   height: 50px;
   width: 100%;
   box-sizing: border-box;
-  background-color: rgba(255,255,255,0.07);
+  background-color: rgba(255,255,255,0.1);
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 8px;
+  margin-bottom: 10px;
   font-size: 14px;
   font-weight: 300;
 }
-
+textarea {
+  resize: vertical;
+  height: 100px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  padding-top: 15px;
+}
 
 /* Icons */
 .pin {
@@ -241,31 +265,46 @@ input{
   border-radius: 35px 35px 0 0;
 }
 
-.shape {
-  height: 1600px;
-  width: 1600px;
-  position: fixed;
-  border-radius: 50%;
-  transform: translate(-30%, 0%);
-}
-
 button {
   background-color: transparent;
   border: 1px solid #103942;
   color: #103942;
-  padding: 5px;
+  padding: 10px;
   text-align: center;
   font-size: 16px;
   display: inline-block;
-  border-radius: 20px;
+  border-radius: 10px;
   transition-duration: .2s;
 }
 button:hover {
-  background-color: #103942;
+  background-color: #6c7779;
+  border: 1px solid #6c7779;
   opacity: 100%;
   color: white
-
 }
+.button-span {
+  width: 100%;
+  margin-top: 10px;
+}
+.button-flip {
+  color: white;
+  background-color: #103942;
+  border: 1px solid #103942;
+}
+.button-flip:hover {
+  background-color: #6c7779;
+  border: 1px solid #6c7779;
+}
+.delete-item-btn {
+  border: none;
+}
+.delete-item-btn:hover {
+  background-color: transparent;
+  border: none;
+}
+.over {
+  opacity: .6;
+} 
 
 /* .events-container {
   width: 75%;

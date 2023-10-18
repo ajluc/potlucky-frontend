@@ -101,37 +101,21 @@ const EventDetails = ({ user }) => {
 
         <img className='event-image' src={images[image]} />
         <h1 id='event-title'>{eventDetails?.eventName}</h1>
-        <div className="uh">
-          {!isOver && (
-            <div>
-              {sharing && <ShareLink />}
-              <button
-                className=""
-                type="button"
-                onClick={() => {
-                  sharing ? setSharing(false) : setSharing(true)
-                }}
-              >
-                Share?
-              </button>
-            </div>
-          )}
-        </div>
 
-        <div className='uh'>
+        <div className=''>
           {user?.id === eventDetails?.hostedBy.id ? (
-            <div className="uh">
+            <div className="">
               {isOver ? (
                 <p>You hosted this event</p>
               ) : (
                 <p>You are hosting this event</p>
               )}
               {!isOver && (
-                <div className="">
-                  <button onClick={editOnClick}>
+                <div className="flex-row">
+                  <button className='button-span' onClick={editOnClick}>
                     Edit
                   </button>
-                  <button onClick={deleteOnClick}>
+                  <button className='button-span' onClick={deleteOnClick}>
                     Delete
                   </button>
                 </div>
@@ -139,11 +123,24 @@ const EventDetails = ({ user }) => {
             </div>
             ) : (
               <div>
-                <h4>Hosted by:</h4>
-                <p className="">{eventDetails?.hostedBy.name}</p>
+                <h4>Hosted by {eventDetails?.hostedBy.name}</h4>
               </div>
             )}
         </div>
+        {!isOver && (
+            <div>
+              {sharing && <ShareLink />}
+              <button
+                className="button-span button-flip"
+                type="button"
+                onClick={() => {
+                  sharing ? setSharing(false) : setSharing(true)
+                }}
+              >
+                Share
+              </button>
+            </div>
+          )}
       </div>
 
       <div className='content-column card'>
@@ -170,7 +167,7 @@ const EventDetails = ({ user }) => {
                 id="description"
                 value={formState.description}
               />
-              <button type="submit">
+              <button className='button-span button-flip' type="submit">
                 Submit
               </button>
             </form>
@@ -212,7 +209,7 @@ const EventDetails = ({ user }) => {
               <></>
             ) : (
               <div>
-                <button onClick={handleClick}>
+                <button className='button-span' onClick={handleClick}>
                   RSVP
                 </button>
               </div>
@@ -248,9 +245,22 @@ const EventDetails = ({ user }) => {
               </div>
             <div className="margin">
                 <h2>Guests</h2>
+                <div className='flex-row'>
+                <Avatar
+                      size={40}
+                      name={eventDetails?.hostedBy.name}
+                      variant="beam"
+                      colors={[
+                        '#F9DED3',
+                        '#FDD1B6',
+                        '#FAB4B6',
+                        '#C7B6BE',
+                        '#89ABB4'
+                      ]}
+                    />
                 {eventDetails?.attendees.map((guest) => (
-                  <div key={guest.id} className="flex-row">
                     <Avatar
+                      key={guest.id}
                       size={40}
                       name={guest.name}
                       variant="beam"
@@ -262,9 +272,8 @@ const EventDetails = ({ user }) => {
                         '#89ABB4'
                       ]}
                     />
-                    {/* <p className='bold'>{guest.name}</p> */}
-                  </div>
                 ))}
+                </div>
               </div>
             </div>
         ) : (

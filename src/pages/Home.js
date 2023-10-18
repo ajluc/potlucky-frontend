@@ -25,59 +25,58 @@ const Home = ({ user, setUser }) => {
   }
 
   return user ? (
-    <div>
-      <div className="flex-column">
-        <h1 id="homepage-header">Upcoming Events</h1>
-        <div className="events-container flex-row">
-          <div className="hosting-card-container">
-            <h2 className="title">Hosting</h2>
-            {userHostedEvents.length > 0 ? (
-              userHostedEvents.map((event) => (
-                <div key={event.id} className="main-card">
-                  <EventCard
-                    id={event.id}
-                    isHost={true}
-                    eventName={event.eventName}
-                    eventDate={event.date}
-                    eventLocation={event.location}
-                    eventDescription={event.description}
-                    items={event.items}
-                    userId={user.id}
-                    onClick={viewEventDetails}
-                  />
-                </div>
-              ))
-            ) : (
-              <div className="main-card"> You're not hosting any events</div>
-            )}
-          </div>
-          <div className="attending-card-container">
-            <h2 className="title">Attending</h2>
-            {events.length > 0 ? (
-              events.map((event) => (
-                <div key={event.id} className="attend-card">
-                  <EventCard
-                    id={event.id}
-                    isHost={false}
-                    eventName={event.eventName}
-                    eventDate={event.date}
-                    eventLocation={event.location}
-                    eventDescription={event.description}
-                    items={event.items}
-                    userId={user.id}
-                    onClick={viewEventDetails}
-                  />
-                </div>
-              ))
-            ) : (
-              <div className="card"> You're not attending any events</div>
-            )}
-          </div>
+    <div className='page-container'>
+      <div className='card'>
+      <h1 id='title'>Welcome back to the party!</h1>
+      {/* <h2 style={{marginTop: '0px'}}>You are hosting {userHostedEvents.length} and attending {events.length} upcoming events</h2> */}
+      <h2 className="title">Hosting</h2>
+      <div className="flex-row card-container">
+          {userHostedEvents.length > 0 ? (
+            userHostedEvents.map((event) => (
+              <div key={event.id} className='home-cards'>
+                <EventCard
+                  id={event.id}
+                  isHost={true}
+                  eventName={event.eventName}
+                  eventDate={event.date}
+                  eventLocation={event.location}
+                  eventDescription={event.description}
+                  items={event.items}
+                  userId={user.id}
+                  onClick={viewEventDetails}
+                />
+              </div>
+            ))
+          ) : (
+            <div> You're not hosting any events</div>
+          )}
+        </div>
+        <h2>Attending</h2>
+        <div className="flex-row card-container">
+          {events.length > 0 ? (
+            events.map((event) => (
+              <div key={event.id} className='home-cards'>
+                <EventCard
+                  id={event.id}
+                  isHost={false}
+                  eventName={event.eventName}
+                  eventDate={event.date}
+                  eventLocation={event.location}
+                  eventDescription={event.description}
+                  items={event.items}
+                  userId={user.id}
+                  onClick={viewEventDetails}
+                />
+              </div>
+            ))
+          ) : (
+            <p> You're not attending any events</p>
+          )}
         </div>
       </div>
-    </div>
+      </div>
   ) : (
-    <div className="protected">
+    <div>
       <SignIn setUser={setUser} />
     </div>
   )

@@ -6,10 +6,10 @@ const NewEvent = ({ user, setUser }) => {
   let navigate = useNavigate()
 
   return user ? (
-    <div className="flex-column">
-      <div className="events-container card">
+    <div className="flex-column page-container">
+      <div className="card">
         <div className="buffer">
-          <h2 id="new-event-logo">Create New Event</h2>
+          <h1 id="reg-title">Create New Event</h1>
           <CreateEventForm user={user} />
         </div>
       </div>

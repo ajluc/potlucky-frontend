@@ -13,23 +13,24 @@ const ShareLink = () => {
   }
 
   return (
-    <div className="share-container">
-      <div className="share-section">
-        <h5>
-          Share this link:{' '}
-          {`https://feelingpotlucky.herokuapp.com${location.pathname}`}
-        </h5>
-        <div className="share">
-          {!copied ? (
-            <button id="copy-btn" type="button" onClick={handleClick}>
-              Copy
-            </button>
-          ) : (
-            <h6>Copied!</h6>
-          )}
-        </div>
-      </div>
-    </div>
+    <p>Coming Soon</p>
+    // <div className="share-container">
+    //   <div className="share-section">
+    //     <h5>
+    //       Share this link:{' '}
+    //       {`https://feelingpotlucky.herokuapp.com${location.pathname}`}
+    //     </h5>
+    //     <div className="share">
+    //       {!copied ? (
+    //         <button id="copy-btn" type="button" onClick={handleClick}>
+    //           Copy
+    //         </button>
+    //       ) : (
+    //         <h6>Copied!</h6>
+    //       )}
+    //     </div>
+    //   </div>
+    // </div>
   )
 }
 

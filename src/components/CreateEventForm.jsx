@@ -29,50 +29,36 @@ const CreateEventForm = ({ user }) => {
   }
 
   return (
-    <div className="the-form">
-      <form onSubmit={handleSubmit}>
-        <div className="e-name">
-          <label htmlFor="Event Name">Event Name:</label>
-          <input
-            onChange={handleChange}
-            type="text"
-            id="eventName"
-            value={formState.eventName}
-          />
-        </div>
-        <div className="e-date">
-          <label htmlFor="Event Date">Event Date:</label>
-          <input
-            onChange={handleChange}
-            type="datetime-local"
-            id="date"
-            value={formState.date}
-          />
-        </div>
-        <div className='e-loc'>
-          <label htmlFor="Event Location">Event Location:</label>
-          <input
-            onChange={handleChange}
-            type="text"
-            id="location"
-            value={formState.location}
-          />
-        </div>
-        <div className='e-des'>
-          <label htmlFor="Event Description">Event Description:</label>
-          <textarea
-            rows="4"
-            cols="50"
-            onChange={handleChange}
-            id="description"
-            value={formState.description}
-          />
-        </div>
-        <div className='sub-event-btn'>
-          <button id="sub-btn" type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input
+        onChange={handleChange}
+        type="text"
+        id="eventName"
+        placeholder='Event Name'
+        value={formState.eventName}
+      />
+      <input
+        onChange={handleChange}
+        type="datetime-local"
+        id="date"
+        placeholder='Date'
+        value={formState.date}
+      />
+      <input
+        onChange={handleChange}
+        type="text"
+        id="location"
+        placeholder='Location'
+        value={formState.location}
+      />
+      <textarea
+        onChange={handleChange}
+        id="description"
+        placeholder='Description'
+        value={formState.description}
+      />
+      <button className='button-span button-flip' type="submit">Submit</button>
+    </form>
   )
 }
 

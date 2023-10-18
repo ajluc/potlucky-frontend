@@ -43,36 +43,36 @@ const SignIn = ({ setUser }) => {
   return (
     <div className="flex-column page-container">
       <div className="card">
-        <h1 id='reg-title'>Sign In</h1>
+        <h1 id='reg-title'>Sign In to Potlucky</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Email</label>
+          {/* <label htmlFor="email">Email</label> */}
           <input
             onChange={handleChange}
             name="email"
             type="text"
-            placeholder="email"
+            placeholder="Email address"
             value={formState.email}
             required
           />
-          <label htmlFor="password">Password</label>
+          {/* <label htmlFor="password">Password</label> */}
           <input
             onChange={handleChange}
             name="password"
             type="password"
-            placeholder="password"
+            placeholder="Password"
             value={formState.password}
             required
           />
-          <button>Sign in!</button>
-        <p>New user?</p>
-        <button onClick={() => navigate('/register')}>
+          <button className='button-span button-flip'>Sign in</button>
+        </form>
+        <div className='flex-row'>
+        <button className='button-span' onClick={() => navigate('/register')}>
           Register
         </button>
-        <p>Want to take a test run?</p>
-        <button onClick={demoSubmit}>
+        <button className='button-span' onClick={demoSubmit}>
           Demo User
         </button>
-        </form>
+      </div>
       </div>
     </div>
   )
