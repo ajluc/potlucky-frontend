@@ -28,9 +28,9 @@ const EventCard = (details) => {
         return (
             <div className={isOver ? 'over' : ''} onClick={ () => {details.onClick(details.id)}}>
                 <img className='event-image' src={images[image]} />
-                <h3 className='event-name'>{details.eventName}</h3>
-                <p className='date-card'>{formatDate(details.eventDate)} at {formatTime(details.eventDate)}</p>
-                <p className='loc-card'>{details.eventLocation}</p>
+                <p style={{margin: '10px 0px 0px'}}>{formatDate(details.eventDate)}</p>
+                <h3 style={{margin: '5px 0px'}}>{details.eventName}</h3>
+                <p style={{margin: '0px 0px 10px 0px'}}>{formatTime(details.eventDate)}</p>
                 {/* {details.isHost ? (
                 <h4>{details.eventDescription}</h4>
                 ) : (

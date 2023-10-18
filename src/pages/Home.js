@@ -25,16 +25,17 @@ const Home = ({ user, setUser }) => {
   }
 
   return user ? (
-    <div className='page-container'>
+    <div className='page-container outer-container'>
       <h1 id='title'>Welcome back to the party!</h1>
       <div className='card'>
       {/* <h2 style={{marginTop: '0px'}}>You are hosting {userHostedEvents.length} and attending {events.length} upcoming events</h2> */}
       <h2 className="event-hosting">Events You Are Hosting</h2>
-      <div className="flex-row card-container">
+      <div className="card-container">
           {userHostedEvents.length > 0 ? (
             userHostedEvents.map((event) => (
               <div key={event.id} className='home-cards'>
                 <EventCard
+                key={event.id} className='home-cards'
                   id={event.id}
                   isHost={true}
                   eventName={event.eventName}
