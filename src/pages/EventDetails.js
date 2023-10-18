@@ -10,10 +10,20 @@ import {
   UpdateEvent
 } from '../services/EventServices'
 import Avatar from 'boring-avatars'
+import img1 from '../images/1.jpg'
+import img2 from '../images/2.jpg'
+import img3 from '../images/3.jpg'
+import img4 from '../images/4.jpg'
+import img5 from '../images/5.jpg'
+import img6 from '../images/6.png'
 
 const EventDetails = ({ user }) => {
   let { id } = useParams()
   let navigate = useNavigate()
+
+  // Placeholder images
+  let images = [img1, img2, img3, img4, img5, img6]
+  let image = id % 6
 
   const initialState = {
     date: '',
@@ -89,7 +99,7 @@ const EventDetails = ({ user }) => {
 
       <div className='fixed-column card'>
 
-        <div className='image-container'>Placeholder</div>
+        <img className='event-image' src={images[image]} />
         <h1 id='event-title'>{eventDetails?.eventName}</h1>
         <div className="uh">
           {!isOver && (
