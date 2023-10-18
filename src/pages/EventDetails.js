@@ -97,7 +97,7 @@ const EventDetails = ({ user }) => {
   return (
     <div className="page-container">
 
-      <div className='fixed-column card'>
+      <div className='fixed-column'>
 
         <img className='event-image' src={images[image]} />
         <h1 id='event-title'>{eventDetails?.eventName}</h1>
@@ -107,8 +107,7 @@ const EventDetails = ({ user }) => {
             <div className="">
               {isOver ? (
                 <p>You hosted this event</p>
-              ) : (
-                <p>You are hosting this event</p>
+              ) : (<></>
               )}
               {!isOver && (
                 <div className="flex-row">
@@ -147,7 +146,7 @@ const EventDetails = ({ user }) => {
 
         <div className=''>
           {edit ? (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}style={{width: '100%'}}>
               <input
                 type="datetime-local"
                 value={formState.date}
@@ -235,15 +234,10 @@ const EventDetails = ({ user }) => {
         (eventDetails?.attendees.find((guest) => guest.id === user.id) ||
           user?.id === eventDetails?.hostedBy.id) ? (
             <div>
-              <div className="margin">
                 <h2>Bringing</h2>
                 <ItemsList user={user} eventId={id} isOver={isOver} />
-              </div>
-              <div className="margin">
                 <h2>Comments</h2>
                 <Comments user={user} eventId={id} />
-              </div>
-            <div className="margin">
                 <h2>Guests</h2>
                 <div className='flex-row'>
                 <Avatar
@@ -275,7 +269,6 @@ const EventDetails = ({ user }) => {
                 ))}
                 </div>
               </div>
-            </div>
         ) : (
           <div></div>
         )}

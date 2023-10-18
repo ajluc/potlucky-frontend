@@ -63,7 +63,7 @@ const ItemsList = ({ user, eventId, isOver }) => {
         </div>
       ))} 
         {!isOver &&
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={{width: '100%'}}>
           <div className='flex-row'>
             <input
             type="text"

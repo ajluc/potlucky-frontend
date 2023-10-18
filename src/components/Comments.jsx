@@ -49,7 +49,7 @@ const Comments = ({ user, eventId }) => {
             <p><span className='bold'>{comment.author.name}</span> said {comment.comment}</p>
         </div>
       ))}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{width: '100%'}}>
         <input
           type="text"
           id="comment"
@@ -61,12 +61,11 @@ const Comments = ({ user, eventId }) => {
     </div>
   ) : (
     <div>
-      <h2>Write the first comment!</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="comment">Write a comment... </label>
+      <form onSubmit={handleSubmit} style={{width: '100%'}}>
         <input
           type="text"
           id="comment"
+          placeholder='Leave a comment'
           value={newComment.comment}
           onChange={handleChange}
         />

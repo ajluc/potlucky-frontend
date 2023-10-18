@@ -16,12 +16,20 @@ body, .shape {
   color: #103942;
   z-index: 100;
 }
-.shape {
-  height: 1600px;
-  width: 1600px;
+.shape:first-child {
+  height: 150vw;
+  width: 150vw;
   position: fixed;
   border-radius: 50%;
   transform: translate(-30%, 12%);
+  z-index: -100;
+}
+.shape:nth-child(2) {
+  height: 60vw;
+  width: 60vw;
+  position: fixed;
+  border-radius: 50%;
+  transform: translate(100%, -50%);
   z-index: -100;
 }
 
@@ -87,12 +95,14 @@ a:active {
 
 .fixed-column {
   width: 30%;
+  max-width: 45vh;
+  height: 70%;
   position: fixed;
   top: 130px;
   left: 10%;
 }
 .content-column {
-  width: 50%; 
+  width: 50%;
   margin-left: 50%; 
   box-sizing: border-box;
 }
@@ -119,12 +129,8 @@ a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-.center-column {
-  justify-content: center;
-}
 
 
 .buffer {
@@ -158,6 +164,10 @@ a:active {
 .event-date, .event-time {
   margin: 0px 0px 10px 0px;
 }
+.event-hosting {
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
 
 .card {
   /* background-color: rgba(255,255,255,0.13); */
@@ -170,14 +180,18 @@ a:active {
   height: 100%;
 }
 .card-container {
+  display: flex;
   flex-wrap: wrap;
+  /* justify-content: center; */
+  align-items: flex-start;
   /* justify-content: space-between; */
   align-items: stretch;
   gap: 20px;
 }
 .home-cards {
   width: 250px;
-  margin: 0px 25px 25px 0px;
+  /* margin: 0px 25px 25px 0px; */
+  margin-right: auto;
 }
 
 form {
@@ -192,6 +206,7 @@ form h3{
   font-weight: 500;
   line-height: 42px;
   text-align: center;
+  width: 100%;
 }
 
 label{

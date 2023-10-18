@@ -26,10 +26,10 @@ const Home = ({ user, setUser }) => {
 
   return user ? (
     <div className='page-container'>
-      <div className='card'>
       <h1 id='title'>Welcome back to the party!</h1>
+      <div className='card'>
       {/* <h2 style={{marginTop: '0px'}}>You are hosting {userHostedEvents.length} and attending {events.length} upcoming events</h2> */}
-      <h2 className="title">Hosting</h2>
+      <h2 className="event-hosting">Events You Are Hosting</h2>
       <div className="flex-row card-container">
           {userHostedEvents.length > 0 ? (
             userHostedEvents.map((event) => (
@@ -51,7 +51,9 @@ const Home = ({ user, setUser }) => {
             <div> You're not hosting any events</div>
           )}
         </div>
-        <h2>Attending</h2>
+        </div>
+        <div className='card' style={{marginTop: '20px'}}>
+        <h2 className='event-hosting'>Events You Are Attending</h2>
         <div className="flex-row card-container">
           {events.length > 0 ? (
             events.map((event) => (
@@ -73,7 +75,8 @@ const Home = ({ user, setUser }) => {
             <p> You're not attending any events</p>
           )}
         </div>
-      </div>
+        </div>
+      
       </div>
   ) : (
     <div>
