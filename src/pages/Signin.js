@@ -41,51 +41,38 @@ const SignIn = ({ setUser }) => {
   }
 
   return (
-    <div className="flex-column">
-      <div className="events-container card">
-        <div className="buffer">
-          <form className="sign-in-box" onSubmit={handleSubmit}>
-            <div className="things">
-              <label htmlFor="email">Email</label>
-              <input
-                className="login-input"
-                onChange={handleChange}
-                name="email"
-                type="text"
-                placeholder="email"
-                value={formState.email}
-                required
-              />
-            </div>
-            <div className="things">
-              <label htmlFor="password">Password</label>
-              <input
-                className="login-input"
-                onChange={handleChange}
-                name="password"
-                type="password"
-                placeholder="password"
-                value={formState.password}
-                required
-              />
-            </div>
-            <div id="login-button">
-              <button id="login-btn">Sign in!</button>
-            </div>
-          </form>
-          <div className="new-user">
-            <p id="newbie">New user?</p>
-            <button id="reg-btn" onClick={() => navigate('/register')}>
-              Register
-            </button>
-          </div>
-          <div className="new-user">
-            <p id="newbie">Want to take a test run?</p>
-            <button id="reg-btn" onClick={demoSubmit}>
-              Demo User
-            </button>
-          </div>
-        </div>
+    <div className="flex-column page-container">
+      <div className="card">
+        <h1 id='reg-title'>Sign In</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            onChange={handleChange}
+            name="email"
+            type="text"
+            placeholder="email"
+            value={formState.email}
+            required
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            onChange={handleChange}
+            name="password"
+            type="password"
+            placeholder="password"
+            value={formState.password}
+            required
+          />
+          <button>Sign in!</button>
+        <p>New user?</p>
+        <button onClick={() => navigate('/register')}>
+          Register
+        </button>
+        <p>Want to take a test run?</p>
+        <button onClick={demoSubmit}>
+          Demo User
+        </button>
+        </form>
       </div>
     </div>
   )

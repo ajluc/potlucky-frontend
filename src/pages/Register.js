@@ -32,64 +32,48 @@ const Register = () => {
   }
 
   return (
-    <div className="flex-column">
-      <div className="events-container card">
-        <div className="buffer">
-          <form className="col" onSubmit={handleSubmit}>
-            <div className='hello'>
-              <label htmlFor="username">Username  </label>
-              <input
-                className='input-reg'
-                onChange={handleChange}
-                name="username"
-                type="text"
-                placeholder="username"
-                value={formState.username}
-                required
-              />
-            </div>
-            <div className='hello'>
-              <label htmlFor="name">Name  </label>
-              <input
-              className='input-reg'
-                onChange={handleChange}
-                name="name"
-                type="text"
-                placeholder="name"
-                value={formState.name}
-                required
-              />
-            </div>
-            <div className='hello'>
-              <label htmlFor="email">Email  </label>
-              <input
-                className='input-reg'
-                onChange={handleChange}
-                name="email"
-                type="text"
-                placeholder="email"
-                value={formState.email}
-                required
-              />
-            </div>
-            <div className='hello'>
-              <label htmlFor="password">Password  </label>
-              <input
-                className='input-reg'
-                onChange={handleChange}
-                name="password"
-                type="password"
-                placeholder="password"
-                value={formState.password}
-                required
-              />
-            </div>
-            <div className='the-btn'>
-              <button id="register-button">Register</button>
-            </div>
-            
-          </form>
-        </div>
+    <div className="flex-column page-container">
+      <div className="card">
+        <h1 id='reg-title'>Register</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="username">Username  </label>
+          <input
+            onChange={handleChange}
+            name="username"
+            type="text"
+            placeholder="username"
+            value={formState.username}
+            required
+          />
+          <label htmlFor="name">Name  </label>
+          <input
+            onChange={handleChange}
+            name="name"
+            type="text"
+            placeholder="name"
+            value={formState.name}
+            required
+          />
+          <label htmlFor="email">Email  </label>
+          <input
+            onChange={handleChange}
+            name="email"
+            type="text"
+            placeholder="email"
+            value={formState.email}
+            required
+          />
+          <label htmlFor="password">Password  </label>
+          <input
+            onChange={handleChange}
+            name="password"
+            type="password"
+            placeholder="password"
+            value={formState.password}
+            required
+          />
+          <button>Register</button>            
+        </form>
       </div>
     </div>
   )

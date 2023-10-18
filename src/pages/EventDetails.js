@@ -87,7 +87,7 @@ const EventDetails = ({ user }) => {
   return (
     <div className="page-container">
 
-      <div className='fixed-column'>
+      <div className='fixed-column card'>
 
         <div className='image-container'>Placeholder</div>
         <h1 id='event-title'>{eventDetails?.eventName}</h1>
@@ -136,7 +136,7 @@ const EventDetails = ({ user }) => {
         </div>
       </div>
 
-      <div className='content-column'>
+      <div className='content-column card'>
 
         <div className=''>
           {edit ? (
