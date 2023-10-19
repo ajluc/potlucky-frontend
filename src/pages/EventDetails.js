@@ -176,7 +176,7 @@ const EventDetails = ({ user }) => {
                   {isOver ? (
                     <div>
                       <p>You missed the party! It was on </p>
-                      <h2>{formatDate(eventDetails?.date)}</h2>
+                      <h2 className='event-date'>{formatDate(eventDetails?.date)}</h2>
                     </div>
                   ) : (
                     <div>
@@ -217,16 +217,18 @@ const EventDetails = ({ user }) => {
         ) : (
           <div>
             <h2 className='margin'>Please sign in or register to RSVP</h2>
-            <button
-              onClick={() => navigate('/signin')}
-            >
-              Sign In
-            </button>
-            <button
-              onClick={() => navigate('/register')}
-            >
-              Register
-            </button>
+            <div className='flex-row'>
+              <button className='button-span'
+                onClick={() => navigate('/signin')}
+              >
+                Sign In
+              </button>
+              <button className='button-span'
+                onClick={() => navigate('/register')}
+              >
+                Register
+              </button>
+            </div>
           </div>
         )}
 
