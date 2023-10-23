@@ -91,4 +91,8 @@ _Component Hierarchy Diagram_
 
 ##### Avatar Generator: [boring avatars](https://boringavatars.com/)
 
+##### Gradient Animation: [Manuel Pinto](https://codepen.io/P1N2O/pen/pyBNzX)
+
+##### Pure CSS Icons: [Nenad](https://codepen.io/lnenad/pen/VXGRdb) and [Mahdi Arjangi](https://codepen.io/mahdiarjangi/pen/KKKZZjZ)
+
 ---
